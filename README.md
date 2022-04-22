@@ -18,3 +18,18 @@ command + shift + F9 또는 Build - Recompile
 
 그래서 파일 하나만 리컴파일해서 시간을 아낄 수 있다.
 
+## 트랜잭션
+
+엔티티 매니저를 통한 모든 변경에 있어서는 트랜잭션을 통해서 이루어져야 함.
+
+```java
+public class MemberRepositoryTest {
+    @Autowired MemberRepository memberRepository;
+
+    @Test
+    @Transactional
+    public void testMember() {
+        ...
+    }
+}
+```
